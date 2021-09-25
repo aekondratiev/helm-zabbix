@@ -28,6 +28,12 @@ zabbixServer:
   POSTGRES_PASSWORD: "zabbix_pwd"
   # -- Name of database
   POSTGRES_DB: "zabbix"
+  # -- Zabbix default settings to change
+  ZBX_CACHESIZE: "8M"
+  ZBX_STARTPOLLERS: 5
+  ZBX_STARTTRAPPERS: 5
+  ZBX_STARTPINGERS: 1
+
   service:
     # -- Type of service in Kubernetes cluster
     type: ClusterIP
@@ -46,7 +52,7 @@ postgresql:
   postgresqlDatabase: zabbix
   # -- Password of``postgres`` user in Postgresql
   postgresqlPostgresPassword: zabbix_pwd
-  # -- PostgreSQL overwrite config
+  # -- PostgreSQL overwrite config, change them for your hardware(this cpu 8, ram 8, hdd)
   postgresqlExtendedConf:
     max_connections: '40'
     shared_buffers: '2GB'

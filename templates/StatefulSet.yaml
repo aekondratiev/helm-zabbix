@@ -54,6 +54,14 @@ spec:
               value: {{ .Values.zabbixServer.POSTGRES_PASSWORD }}
             - name: POSTGRES_DB
               value: {{ .Values.zabbixServer.POSTGRES_DB }}
+            - name: ZBX_CACHESIZE
+              value: {{ .Values.zabbixServer.ZBX_CACHESIZE }}
+            - name: ZBX_STARTPOLLERS
+              value: {{ .Values.zabbixServer.ZBX_STARTPOLLERS | quote }}
+            - name: ZBX_STARTTRAPPERS
+              value: {{ .Values.zabbixServer.ZBX_STARTTRAPPERS | quote }}
+            - name: ZBX_STARTPINGERS
+              value: {{ .Values.zabbixServer.ZBX_STARTPINGERS | quote }}
 {{- range $item := .Values.zabbixServer.extraEnv }}
             - name: {{ $item.name }}
               value: {{ $item.value }}
