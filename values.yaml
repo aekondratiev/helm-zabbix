@@ -156,7 +156,7 @@ zabbixweb:
   enabled: true
   image:
     # -- Zabbix web Docker image name
-    repository: zabbix/zabbix-web-apache-pgsql
+    repository: zabbix/zabbix-web-nginx-pgsql
     # -- Tag of Docker image of Zabbix web
     tag: ubuntu-5.4.4
     # -- Pull policy of Docker image
